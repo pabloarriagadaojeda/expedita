@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expedita · prototipo</title>
+  <meta name="description" content="Prototipo navegable de Expedita: autorevisión del expediente de regularización de ampliaciones antes de ingresar a la DOM de Concepción.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="logged-out">
+  <header class="appbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28">
+          <rect width="32" height="32" rx="8" fill="#1f9d62"/>
+          <path d="M9.5 9.5h8.2l5.3 5.3v8.5a1.7 1.7 0 0 1-1.7 1.7H9.5a1.7 1.7 0 0 1-1.7-1.7v-12a1.7 1.7 0 0 1 1.7-1.7z" fill="none" stroke="#fff" stroke-width="1.7"/>
+          <path d="M17.4 9.6v5.2h5.2" fill="none" stroke="#fff" stroke-width="1.7"/>
+          <path d="M11.2 19.2l2.3 2.3 5.6-5.8" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <div>
+        <strong>expedita</strong>
+        <span id="crumb">Concepción</span>
+      </div>
+    </div>
+    <nav class="steps" id="steps" aria-label="Pasos del expediente"></nav>
+    <div class="bar-actions">
+      <button class="btn btn-ghost btn-compact" id="logout" type="button" data-action="logout">Cerrar sesión</button>
+      <button class="btn btn-primary btn-compact" id="next" type="button" data-action="next">Siguiente</button>
+    </div>
+  </header>
+
+  <main id="workspace" aria-live="polite"></main>
+
+  <dialog id="export-dialog">
+    <form method="dialog">
+      <header>
+        <h2>Resumen pre-ingreso</h2>
+        <p>Vista previa simulada. Este botón no genera un archivo.</p>
+      </header>
+      <div id="export-body"></div>
+      <button class="btn btn-primary" value="close">Cerrar vista previa</button>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
